@@ -68,6 +68,24 @@ joblistingapp/
 
    Follow the instructions in the terminal to open the app on an emulator or physical device.
 
+## Mobile Application Screens
+
+### Screen 1 
+
+- **Screenshot:** -> Job Lists Screen
+  ![Job Lists Screen](MobileAppScreenShots/JobListPage.jpg)
+
+### Phase 3: UI
+
+- **Screenshot:** Developed Chat Room Area
+  ![Navbar and Chat UI](Screenshots/phase3.png)
+
+### Phase 4: UI
+
+- **Screenshot:** Developed Emoji , Links, Menu Options and profile options
+  ![Navbar and Chat UI](Screenshots/phase4.png)
+
+
 ## Components
 
 ### `api/api.js`
