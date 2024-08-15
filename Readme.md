@@ -50,6 +50,11 @@ joblistingapp/
 - **Screenshot**:
   ![Job Detail Screen](MobileAppScreenShots/JobDetailPage.jpg)
 
+## Demo Video
+
+You can watch live application here: [Demo Video](https://drive.google.com/file/d/1drBh6hSyXt3T7SH5232pMuOGaSqg8n_Y/view?usp=sharing)
+
+
 ## Components
 
 ### `api/api.js`
