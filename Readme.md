@@ -48,11 +48,11 @@ joblistingapp/
 
 - **Description**: Shows detailed information about a specific job.
 - **Screenshot**:
-  ![Job Detail Screen](MobileAppScreenShots/JobDetailPage.jpg)
+  ![Job Detail Screen](MobileAppScreenShots/ViewDetailsPage.jpg)
 
 ## Demo Video
 
-You can watch live application here: [Demo Video](https://drive.google.com/file/d/1drBh6hSyXt3T7SH5232pMuOGaSqg8n_Y/view?usp=sharing)
+You can watch live application here: [Job Search Application](https://drive.google.com/file/d/1drBh6hSyXt3T7SH5232pMuOGaSqg8n_Y/view?usp=sharing)
 
 
 ## Components
