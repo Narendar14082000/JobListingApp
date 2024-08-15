@@ -1,3 +1,4 @@
+
 ---
 
 # Job Listing App
@@ -29,62 +30,25 @@ joblistingapp/
 └── README.md                 # Project documentation
 ```
 
-## Setup and Installation
-
-1. **Clone the Repository**
-
-   ```bash
-   git clone <repository-url>
-   cd joblistingapp
-   ```
-
-2. **Install Dependencies**
-
-   Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/) installed. Then run:
-
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Install Additional Dependencies**
-
-   Ensure you have the required dependencies:
-
-   ```bash
-   npm install @react-navigation/native @react-navigation/bottom-tabs @react-navigation/native-stack react-native-vector-icons @react-native-async-storage/async-storage
-   ```
-
-4. **Run the Application**
-
-   For development, you can start the app with:
-
-   ```bash
-   npm start
-   # or
-   yarn start
-   ```
-
-   Follow the instructions in the terminal to open the app on an emulator or physical device.
-
 ## Mobile Application Screens
 
-### Screen 1 
+### Screen 1: Job Lists Screen
 
-- **Screenshot:** -> Job Lists Screen
+- **Description**: Displays a list of job postings with options to bookmark and view details.
+- **Screenshot**:
   ![Job Lists Screen](MobileAppScreenShots/JobListPage.jpg)
 
-### Screen 2 
+### Screen 2: Bookmarked Jobs Screen
 
-- **Screenshot:** --> BookMark Screen
-  ![BookMark Screen](MobileAppScreenShots/BookmarkedPage.jpg)
+- **Description**: Displays a list of bookmarked jobs retrieved from local storage.
+- **Screenshot**:
+  ![Bookmarked Jobs Screen](MobileAppScreenShots/BookmarkedPage.jpg)
 
-### Screen 3
+### Screen 3: Job Detail Screen
 
-- **Screenshot:** -> View Details Page
-  ![View Details Page](MobileAppScreenShots/JobListPage.jpg)
-
+- **Description**: Shows detailed information about a specific job.
+- **Screenshot**:
+  ![Job Detail Screen](MobileAppScreenShots/JobDetailPage.jpg)
 
 ## Components
 
@@ -112,8 +76,19 @@ Provides functions to save, remove, and retrieve bookmarks using `AsyncStorage`.
 
 Sets up navigation between screens using `@react-navigation/native` and `@react-navigation/native-stack`.
 
+## Functional Requirements
+
+- **Bottom Navigation**: Users are presented with a bottom navigation UI with “Jobs” and “Bookmarks” as sections.
+- **Jobs Screen**: Fetches data from an API with infinite scroll. Displays job title, location, salary, and phone number.
+- **Job Details**: Clicking on a job card navigates to a screen showing more details about the job.
+- **Bookmark Jobs**: Users can bookmark jobs, and these will appear in the “Bookmarks” tab.
+- **Offline Storage**: All bookmarked jobs are stored locally for offline viewing.
+- **State Management**: Handles appropriate states for loading, errors, and empty states throughout the app.
+
 ## Troubleshooting
 
 - **Module Not Found Errors**: Ensure all dependencies are installed and properly linked.
-- **Bookmark Not Showing**: Verify that bookmarks are being saved and retrieved correctly. Ensure local storage is properly functioning.
+- **Bookmark Not Showing**: Verify that bookmarks are being saved and retrieved correctly. Ensure local storage is functioning.
+
+---
 

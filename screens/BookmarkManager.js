@@ -1,4 +1,4 @@
-// BookmarkManager.js
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Save a bookmark

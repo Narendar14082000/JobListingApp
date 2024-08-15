@@ -1,4 +1,4 @@
-// BookmarksScreen.js
+
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, ActivityIndicator, StyleSheet } from 'react-native';
 import { getBookmarks } from './BookmarkManager';
