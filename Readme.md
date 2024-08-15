@@ -75,15 +75,15 @@ joblistingapp/
 - **Screenshot:** -> Job Lists Screen
   ![Job Lists Screen](MobileAppScreenShots/JobListPage.jpg)
 
-### Phase 3: UI
+### Screen 2 
 
-- **Screenshot:** Developed Chat Room Area
-  ![Navbar and Chat UI](Screenshots/phase3.png)
+- **Screenshot:** --> BookMark Screen
+  ![BookMark Screen](MobileAppScreenShots/BookmarkedPage.jpg)
 
-### Phase 4: UI
+### Screen 3
 
-- **Screenshot:** Developed Emoji , Links, Menu Options and profile options
-  ![Navbar and Chat UI](Screenshots/phase4.png)
+- **Screenshot:** -> View Details Page
+  ![View Details Page](MobileAppScreenShots/JobListPage.jpg)
 
 
 ## Components
