@@ -35,19 +35,19 @@ joblistingapp/
 ### Screen 1: Job Lists Screen
 
 - **Description**: Displays a list of job postings with options to bookmark and view details.
-- **Screenshot**:
+
   ![Job Lists Screen](MobileAppScreenShots/JobListPage.jpg)
 
 ### Screen 2: Bookmarked Jobs Screen
 
 - **Description**: Displays a list of bookmarked jobs retrieved from local storage.
-- **Screenshot**:
+
   ![Bookmarked Jobs Screen](MobileAppScreenShots/BookmarkedPage.jpg)
 
 ### Screen 3: Job Detail Screen
 
 - **Description**: Shows detailed information about a specific job.
-- **Screenshot**:
+
   ![Job Detail Screen](MobileAppScreenShots/ViewDetailsPage.jpg)
 
 ## Demo Video
