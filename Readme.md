@@ -50,7 +50,7 @@ joblistingapp/
 
   ![Job Detail Screen](MobileAppScreenShots/ViewDetailsPage.jpg)
 
-## Demo Video
+## Video Presentation
 
 You can watch live application here: [Job Search Application](https://drive.google.com/file/d/1drBh6hSyXt3T7SH5232pMuOGaSqg8n_Y/view?usp=sharing)
 
