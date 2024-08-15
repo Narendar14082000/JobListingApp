@@ -1,4 +1,4 @@
-// screens/JobsScreen.js
+// JobsScreen.js
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, ActivityIndicator, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -80,7 +80,7 @@ const JobsScreen = ({ navigation }) => {
     <FlatList
       data={jobs}
       renderItem={renderItem}
-      keyExtractor={item => item.id ? item.id.toString() : Math.random().toString()} // Handle undefined ids
+      keyExtractor={item => item.id ? item.id.toString() : 'default-key'}
       onEndReached={loadJobs}
       onEndReachedThreshold={0.5}
     />

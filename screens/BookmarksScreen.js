@@ -1,36 +1,54 @@
-// screens/BookmarksScreen.js
-import React, { useContext } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
-import { BookmarkContext } from '../context/BookmarkContext';
-import Icon from 'react-native-vector-icons/Ionicons';
+// BookmarksScreen.js
+import React, { useState, useEffect } from 'react';
+import { View, Text, FlatList, ActivityIndicator, StyleSheet } from 'react-native';
+import { getBookmarks } from './BookmarkManager';
+import { fetchJobs } from '../api/api';
 
-const BookmarksScreen = ({ navigation }) => {
-  const { bookmarkedJobs, removeBookmark } = useContext(BookmarkContext);
+const BookmarksScreen = () => {
+  const [bookmarkedJobs, setBookmarkedJobs] = useState([]);
+  const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const bookmarks = await getBookmarks();
+        setBookmarkedJobs(bookmarks);
+        
+        // Fetch jobs to match the bookmarked ones
+        const allJobs = await fetchJobs();
+        setJobs(allJobs.filter(job => bookmarks.includes(job.id)));
+        setLoading(false);
+      } catch (err) {
+        setError('Failed to load bookmarked jobs');
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const renderItem = ({ item }) => (
-    <TouchableOpacity
-      style={styles.card}
-      onPress={() => navigation.navigate('JobDetail', { job: item })}
-    >
-      <View style={styles.header}>
-        <Text style={styles.title}>{item.title || 'Not Available'}</Text>
-        <TouchableOpacity onPress={() => removeBookmark(item.id)}>
-          <Icon name="bookmark" size={24} color="#FFD700" />
-        </TouchableOpacity>
-      </View>
-      <Text style={styles.details}><Icon name="location-outline" size={18} /> {item.primary_details?.Place || 'Not Available'}</Text>
-      <Text style={styles.details}><Icon name="cash-outline" size={18} /> Salary: {item.primary_details?.Salary || 'Not Available'}</Text>
-      <Text style={styles.details}><Icon name="briefcase-outline" size={18} /> Experience: {item.primary_details?.Experience || 'Not Available'}</Text>
-    </TouchableOpacity>
+    <View style={styles.card}>
+      <Text style={styles.title}>{item.title || 'Not Available'}</Text>
+      <Text style={styles.details}>Location: {item.primary_details?.Place || 'Not Available'}</Text>
+      <Text style={styles.details}>Salary: {item.primary_details?.Salary || 'Not Available'}</Text>
+      <Text style={styles.details}>Experience: {item.primary_details?.Experience || 'Not Available'}</Text>
+      <Text style={styles.details}>Job Type: {item.primary_details?.Job_Type || 'Not Available'}</Text>
+      <Text style={styles.details}>Phone: {item.phone || 'Not Available'}</Text>
+    </View>
   );
 
-  if (bookmarkedJobs.length === 0) return <Text>No bookmarked jobs available</Text>;
+  if (loading) return <ActivityIndicator size="large" color="#0000ff" />;
+  if (error) return <Text>{error}</Text>;
+  if (jobs.length === 0) return <Text>No bookmarked jobs</Text>;
 
   return (
     <FlatList
-      data={bookmarkedJobs}
+      data={jobs}
       renderItem={renderItem}
-      keyExtractor={item => item.id.toString()}
+      keyExtractor={item => item.id ? item.id.toString() : 'default-key'}
     />
   );
 };
@@ -49,16 +67,11 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     elevation: 3,
   },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 10,
-  },
   title: {
     fontSize: 18,
     fontWeight: 'bold',
     color: '#333',
+    marginBottom: 10,
   },
   details: {
     fontSize: 16,
