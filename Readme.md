@@ -1,7 +1,7 @@
 
 ---
 
-# Job Listing App
+# Job Searching App
 
 A React Native application for browsing job listings, bookmarking jobs, and viewing saved bookmarks.
 
@@ -28,6 +28,13 @@ joblistingapp/
 ├── App.js                    # Main entry point of the app
 ├── package.json              # Project metadata and dependencies
 └── README.md                 # Project documentation
+```
+## React Native Installation
+```comment
+npx create-expo-app jobsearch --template blank
+npm install -g expo-cli
+expo init JobApp
+cd JobApp
 ```
 
 ## Mobile Application Screens
