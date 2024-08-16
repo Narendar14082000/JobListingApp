@@ -30,10 +30,9 @@ joblistingapp/
 └── README.md                 # Project documentation
 ```
 ## React Native Installation
-```comment
-npx create-expo-app jobsearch --template blank
+```java
 npm install -g expo-cli
-expo init JobApp
+expo init JobApp or npx create-expo-app jobsearch --template blank
 cd JobApp
 ```
 
